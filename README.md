@@ -3,8 +3,8 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
+[![StyleCI](https://github.styleci.io/repos/190005727/shield?branch=master)](https://github.styleci.io/repos/190005727)
+[![Open Issues][ico-issues]][link-issues]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 Service for keeping database connection timezone synchronized to PHP default timezone.
@@ -115,15 +115,13 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/zssarkany/laravel-database-sticky-timezone.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/zssarkany/laravel-database-sticky-timezone/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/zssarkany/laravel-database-sticky-timezone.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/zssarkany/laravel-database-sticky-timezone.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/com/zssarkany/laravel-database-sticky-timezone/master.svg?style=flat-square
+[ico-issues]: https://img.shields.io/github/issues-raw/zssarkany/laravel-database-sticky-timezone.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/zssarkany/laravel-database-sticky-timezone.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/zssarkany/laravel-database-sticky-timezone
-[link-travis]: https://travis-ci.org/zssarkany/laravel-database-sticky-timezone
-[link-scrutinizer]: https://scrutinizer-ci.com/g/zssarkany/laravel-database-sticky-timezone/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/zssarkany/laravel-database-sticky-timezone
+[link-travis]: https://travis-ci.com/zssarkany/laravel-database-sticky-timezone
+[link-issues]: https://github.com/zssarkany/laravel-database-sticky-timezone/issues
 [link-downloads]: https://packagist.org/packages/zssarkany/laravel-database-sticky-timezone
 [link-author]: https://github.com/zssarkany
 [link-contributors]: ../../contributors
