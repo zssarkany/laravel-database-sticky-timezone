@@ -9,6 +9,39 @@
 
 Service for keeping database connection timezone synchronized to PHP default timezone.
 
+## Purpose
+
+There are at least two different approaches for handling database fields of
+`timestamp` type in projects:
+
+- fetch data using some predefined timezone offset and adjust resulted string
+  representation values with JavaScript or PHP;
+- adjust database connection by setting its timezone offset, then fetch timestamp
+  values with desired string representation.
+
+Obviously there are pros and cons for both approaches, but if there is a
+requirement to support LIKE matching (e.g.: 2019-06-% or %19-06%), the first
+approach sems to be quite challenging.
+
+This package aims to implement the second approach.
+
+Storage engines store these values as 32bits unsigned integers, and string
+representation (YYYY-MM-DD HH:MM:SS) depends on the connection-specific timezone
+offset. Select, update, where expressions could provide unexpected results without
+appropriate caution.
+
+Under the hood `Illuminate\Database\MySqlConnection` gets extended and `getPdo()`
+and `getReadPdo()` methods get overwritten by a change detector and actuator logic.
+When mentioned methods are invoked, underlying PDO object gets checked for
+replacement and PHP default timezone offset (`date('P')`) gets compared to
+previously set offset value. In case of change is detected, `'SET time_zone = "+hh:mm"'`
+is executed on the specific PDO instance, where +hh:mm equals to `date('P')`.
+
+This makes developer able to simply update PHP default time zone with
+`date_default_timezone_set(...)` and database queries executed afterwards
+will be affected by the new offset. Effect is limited for `timestamp` fields,
+`datetime` is not affected.
+
 ## Install
 
 Via Composer
@@ -37,6 +70,14 @@ return [
     // ...
 ];
 ```
+
+SQL statements executed on this connection are taking PHP default timezone
+into account for timestamp fields.
+
+## Laravel compatibility
+
+The package was developed for and tested with v5.8, but it should work with
+nearby versions as well.
 
 ## Supported drivers
 
