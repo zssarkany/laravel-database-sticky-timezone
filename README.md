@@ -92,7 +92,7 @@ into account for timestamp fields.
 
 ## PHP and Laravel unit and integration tests
 
-Packes is tested with the following conditions:
+Package is tested with the following conditions:
 
 |PHP|Laravel|Stability|
 |:-:|:-:|:-:|
