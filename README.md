@@ -44,6 +44,13 @@ This makes developer able to simply update PHP default time zone with
 will be affected by the new offset. Effect is limited for `timestamp` fields,
 `datetime` is not affected.
 
+## Requirements
+
+- PHP >= 7.1
+- Laravel >= 5.5
+
+See [PHP and Laravel unit and integration tests](#php-and-laravel-unit-and-integration-tests)
+
 ## Install
 
 Via Composer
@@ -51,6 +58,13 @@ Via Composer
 ``` bash
 $ composer require zssarkany/laravel-database-sticky-timezone
 ```
+
+It is not necessary to add service provider to `config/app.php`, but if service
+discovery is disabled via `composer.json`,
+`ZsSarkany\LaravelDatabaseStickyTimezone\DatabaseStickyTimezoneServiceProvider::class`
+needs to be added before `Illuminate\Database\DatabaseServiceProvider::class` to
+`providers` array, otherwise the the connection resolver will be bound after
+the database connection is resolved already.
 
 ## Usage
 
@@ -76,10 +90,26 @@ return [
 SQL statements executed on this connection are taking PHP default timezone
 into account for timestamp fields.
 
-## Laravel compatibility
+## PHP and Laravel unit and integration tests
 
-The package was developed for and tested with v5.8, but it should work with
-nearby versions as well.
+Packes is tested with the following conditions:
+
+|PHP|Laravel|Stability|
+|:-:|:-:|:-:|
+|7.1|5.5|stable|
+|7.1|5.6|stable|
+|7.1|5.7|stable|
+|7.1|5.8|stable|
+|7.2|5.5|stable|
+|7.2|5.6|stable|
+|7.2|5.7|stable|
+|7.2|5.8|stable|
+|7.2|5.9|dev|
+|7.3|5.5|stable|
+|7.3|5.6|stable|
+|7.3|5.7|stable|
+|7.3|5.8|stable|
+|7.3|5.9|dev|
 
 ## Supported drivers
 
