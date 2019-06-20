@@ -20,7 +20,9 @@
         "php" : "~7.1"
     },
     "require-dev": {
-        "phpunit/phpunit" : ">=7.0",
+        "mockery/mockery": "^1.0",
+        "orchestra/testbench": "^3.7",
+        "phpunit/phpunit": ">=7.0",
         "squizlabs/php_codesniffer": "^3.0"
     },
     "autoload": {
@@ -30,7 +32,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ZsSarkany\\LaravelDatabaseStickyTimezone\\": "tests"
+            "ZsSarkany\\LaravelDatabaseStickyTimezone\\Tests\\": "tests"
         }
     },
     "scripts": {

@@ -31,7 +31,7 @@ class ChangeDetector
      *
      * @return void
      */
-    public function handle(\PDO $pdo, callable $callback): void
+    public function handle(?\PDO $pdo, callable $callback): void
     {
         if (is_null($pdo)) {
             return;

@@ -15,15 +15,15 @@ class MySqlConnection extends BaseMySqlConnection
      * Enforcing timezone for PDO instance by execution of "SET timezone = xxxx"
      * if needed.
      *
-     * @param \PDO $pdo
+     * @param \PDO|null      $pdo
      * @param ChangeDetector $changeDetector
      *
-     * @return \PDO
+     * @return \PDO|null
      */
     protected function enforcePdoTimezone(
-        \PDO $pdo,
+        ?\PDO $pdo,
         ChangeDetector $changeDetector
-    ): \PDO {
+    ): ?\PDO {
         if (is_null($pdo) || $this->pretending()) {
             return $pdo;
         }

@@ -25,9 +25,9 @@ trait TimezoneEnforcerTrait
     /**
      * Get the current PDO connection.
      *
-     * @return \PDO
+     * @return \PDO|null
      */
-    public function getPdo(): \PDO
+    public function getPdo(): ?\PDO
     {
         if (!$this->pdoChangeDetector) {
             $this->pdoChangeDetector = new ChangeDetector;
@@ -42,9 +42,9 @@ trait TimezoneEnforcerTrait
     /**
      * Get the current PDO connection used for reading.
      *
-     * @return \PDO
+     * @return \PDO|null
      */
-    public function getReadPdo(): \PDO
+    public function getReadPdo(): ?\PDO
     {
         if (!$this->readPdoChangeDetector) {
             $this->readPdoChangeDetector = new ChangeDetector;
