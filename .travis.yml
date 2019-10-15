@@ -24,6 +24,8 @@ matrix:
       env:
         - TESTBENCH_VERSION="4.0.*"
         - COVERAGE_UPLOAD=1
+    - php: 7.2
+      env: TESTBENCH_VERSION="4.2"
 
     - php: 7.3
       env: TESTBENCH_VERSION="3.5.*"
@@ -35,6 +37,10 @@ matrix:
       env: TESTBENCH_VERSION="3.8.*"
     - php: 7.3
       env: TESTBENCH_VERSION="4.0"
+    - php: 7.3
+      env: TESTBENCH_VERSION="4.0"
+    - php: 7.3
+      env: TESTBENCH_VERSION="4.2"
 
 cache:
   directories:

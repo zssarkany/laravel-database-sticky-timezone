@@ -105,11 +105,13 @@ Package is tested with the following conditions:
 |7.2|5.7|stable|
 |7.2|5.8|stable|
 |7.2|6.0|stable|
+|7.2|6.2|stable|
 |7.3|5.5|stable|
 |7.3|5.6|stable|
 |7.3|5.7|stable|
 |7.3|5.8|stable|
 |7.3|6.0|stable|
+|7.3|6.2|stable|
 
 ## Supported drivers
 
