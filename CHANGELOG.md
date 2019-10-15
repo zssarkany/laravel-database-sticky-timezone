@@ -9,9 +9,6 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Added
 - Unit and integration tests for Laravel 6.0 and 6.2
 
-### Fixed
-- Adding missing nullable mark for type declarations required in some rare special cases
-
 ## [1.0.1] - 2019-06-03
 
 ### Fixed
